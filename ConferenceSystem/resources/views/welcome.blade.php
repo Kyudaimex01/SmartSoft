@@ -22,11 +22,9 @@
                 <div class="read-more">
                     <a href="#" class="text-uppercase c-green">mas...</a>
                 </div>
-                <div class="tags container-flex">
-                    <span class="tag c-gray-1 text-capitalize"></span>
-                    <span class="tag c-gray-1 text-capitalize"></span>
-                    <span class="tag c-gray-1 text-capitalize">Explorar</span>
-                </div>
+            <!--    <div class="tags container-flex">
+                estas lineas se trataban sobre estiquetas, pero no pude manejarlas(FER)
+                </div> -->
             </footer>
         </div>
     </article>
