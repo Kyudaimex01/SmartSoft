@@ -1,8 +1,8 @@
-@extends('layout')
+@extends('layouts.syslayout')
 
 @section('content')
 
-<section class="posts container">
+<div class="posts container">
 
     @foreach($posts as $post)
     <article class="post no-image">
@@ -229,7 +229,7 @@
         </div>
     </article> -->
 
-</section><!-- fin del div.posts.container -->
+</div><!-- fin del div.posts.container -->
 
 <div class="pagination">
     <ul class="list-unstyled container-flex space-center">
@@ -239,4 +239,4 @@
     </ul>
 </div>
 
-@stop
+@endsection
