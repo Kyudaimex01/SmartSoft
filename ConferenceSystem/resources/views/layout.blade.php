@@ -11,12 +11,16 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximun-scale=1, minimun-scale=1">
+    <link rel="stylesheet" href="css/superslides.css">
+
 </head>
 <body>
 <div class="preload"></div>
 <header class="space-inter">
     <div class="container container-flex space-between">
-        <figure class="logo"><img src="img/logo1.jpg" alt=""></figure>
+        <figure class="logo"><img src="img/logo3.png" alt=""></figure>
         <nav class="custom-wrapper" id="menu">
             <div class="pure-menu"></div>
             <ul class="container-flex list-unstyled">
