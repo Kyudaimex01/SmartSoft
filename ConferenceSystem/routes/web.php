@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/news', function () {
     $posts = App\Post::latest('published_at')->get();
 
     return view('welcome', compact('posts'));
@@ -24,7 +24,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/about', function (){
+    return view('about');
+});
 
-Route::get('admin', function (){
-    return view('admin.dashboard');
+Route::get('/speaker', function (){
+    return view('speaker');
+});
+
+
+/*
+ * pagina principal
+ */
+Route::get('/', function (){
+    return view('index');
 });
