@@ -14,7 +14,7 @@
 Route::get('/news', function () {
     $posts = App\Post::latest('published_at')->get();
 
-    return view('welcome', compact('posts'));
+    return view('welcome', compact('posts'));//
 });
 
 Route::get('posts', function(){
