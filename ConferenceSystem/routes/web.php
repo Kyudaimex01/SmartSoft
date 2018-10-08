@@ -14,7 +14,7 @@
 Route::get('/news', function () {
     $posts = App\Post::latest('published_at')->get();
 
-    return view('welcome', compact('posts'));
+    return view('news', compact('posts'));
 });
 
 Route::get('posts', function(){
@@ -33,11 +33,11 @@ Route::get('/speaker', function (){
     return view('speaker');
 });
 
-<<<<<<< HEAD
+
 Route::get('admin', function (){
     return view('admin.dashboard');
 });
-=======
+
 
 /*
  * pagina principal
@@ -45,4 +45,4 @@ Route::get('admin', function (){
 Route::get('/', function (){
     return view('index');
 });
->>>>>>> f22d371012bf87ebea7950fdf1f0a87c427467c5
+
