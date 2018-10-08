@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.syslayout')
 
 @section('content')
 
@@ -229,7 +229,9 @@
         </div>
     </article> -->
 
+
     </section><!-- fin del div.posts.container -->
+
 
     <div class="pagination">
         <ul class="list-unstyled container-flex space-center">
@@ -239,4 +241,6 @@
         </ul>
     </div>
 
-@stop
+
+@endsection
+
