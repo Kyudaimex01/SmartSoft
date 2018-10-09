@@ -13,12 +13,7 @@
 
 Route::get('/news', function () {
     $posts = App\Post::latest('published_at')->get();
-
-<<<<<<< HEAD
-    return view('welcome', compact('posts'));//
-=======
     return view('news', compact('posts'));
->>>>>>> c858a348cf0c5ca8940c320037af62bcf5ef82a0
 });
 
 Route::get('posts', function(){
