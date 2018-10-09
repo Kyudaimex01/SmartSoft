@@ -27,7 +27,7 @@
                                     <ul class="list-unstyled navbar__list">
 
                                         <li class="active">
-                                            <a href="#">
+                                            <a href="home">
                                                 <i class="fas fa-shopping-basket"></i>Conferences</a>
                                         </li>
 
@@ -46,19 +46,18 @@
                                     <ul class="list-unstyled navbar__list">
 
                                         <li class="active">
-                                            <a href="#">
+                                            <a href="home">
                                                 <i class="fas fa-shopping-basket"></i>Conferences</a>
                                         </li>
 
                                         <li >
-                                            <a href="userlist">
+                                            <a href="#">
                                                 <i class="fas"></i>Users</a>
                                         </li>
 
                                     </ul>
                                 </nav>
                             @endguest
-
                             </aside>
                             <!-- END MENU SIDEBAR-->
                         </div>
@@ -71,33 +70,25 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center">#</th>
-                                                <th class="text-center">First Name</th>
-                                                <th class="text-center">Last Name</th>
+                                                <th class="text-center">Name</th>
                                                 <th class="text-center">Email</th>
-                                                <th class="text-center">Gender</th>
-                                                <th class="text-center">Country</th>
-                                                <th class="text-center">Salary ($)</th>
-                                                <th class="text-center">Actions</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
                                         @if($size!=0)
-                                            @foreach($conferences as $item)
-                                            <tr class="item{{$item->id_conf}}">
-                                                <td>{{$item->id_conf}}</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                            @foreach($users as $item)
+                                            <tr class="item{{$item->id}}">
+                                                <td>{{$item->id}}</td>
+                                                <td>{{$item->name}}</td>
+                                                <td>{{$item->email}}</td>
                                                 <td><button type="button" class="edit-modal btn btn-info"
-                                                    data-info="{{$item->id_conf}}" data-toggle="modal" data-target="#updateModal">
+                                                    data-info="{{$item->id}},{{$item->name}},{{$item->email}}" data-toggle="modal" data-target="#updateModal">
                                                         <span class="glyphicon glyphicon-edit"></span> Edit
                                                 </button>
 
                                                 <button class="delete-modal btn btn-danger"
-                                                        data-info="{{$item->id_conf}}">
+                                                        data-info="{{$item->id}},{{$item->name}},{{$item->email}}">
                                                         <span class="glyphicon glyphicon-trash"></span> Delete
                                                     </button>
                                                 </td>
@@ -175,40 +166,3 @@
     <script src="js/main.js"></script>
 @endsection
 
-@section('saved')
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--ALERT DIV-->
-<div class="container">
-                    <!-- ALERT-->
-                    <div class="alert au-alert-success alert-dismissible fade show au-alert au-alert--70per" role="alert">
-                        <i class="zmdi zmdi-check-circle"></i>
-                        <span class="content">You successfully read this important alert message.</span>
-                        <button class="close" type="button" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">
-                                <i class="zmdi zmdi-close-circle"></i>
-                            </span>
-                        </button>
-                    </div>
-                    <!-- END ALERT-->
-</div>
-@endsection

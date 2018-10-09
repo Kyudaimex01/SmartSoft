@@ -12,7 +12,7 @@ class Conference extends Model
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name',
+        'id_conf', 'id_ex','id_user',
     ];
 
     /**
@@ -23,4 +23,12 @@ class Conference extends Model
     protected $hidden = [
 
     ];
+
+    public function user(){
+        return $this->hasMany('App\User','id');
+    }
+
+    public function exp(){
+        return $this->hasOne('App\Expositor','id_exp');
+    }
 }

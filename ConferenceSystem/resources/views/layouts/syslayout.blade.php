@@ -54,15 +54,7 @@
                 <li><a href="about" class="text-uppercase">Nosotros</a></li><!--About-->
                 <li><a href="speaker" class="text-uppercase">Expositores</a></li><!--Archive-->
                 <li><a href="news" class="text-uppercase">Noticias</a></li><!--Contact-->
-                @guest
-                            <li class="text-uppercase">
-                                <a href="{{ route('login') }}">{{ __('Login') }}</a>
-
-                            </li>
-                            <li class="text-uppercase">
-                                <a href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @else
+                    @auth('web')
                             <li class="text-uppercase">
                                 <a href="home" >
                                     {{ Auth::user()->name }}
@@ -79,8 +71,34 @@
                                         @csrf
                                     </form>
                                 </li>
+                    @else
+                        @auth('admin')
+                            <li class="text-uppercase">
+                                <a href="home" >
+                                {{ Auth::guard('admin')->user()->name }}
+                                </a>
+                            </li>
+                                <li class="text-uppercase">
+                                    <a href="{{ route('admin.logout') }}"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                        Salir
+                                    </a>
 
-                        @endguest
+                                    <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
+                        @else
+                            <li class="text-uppercase">
+                                <a href="{{ route('login') }}">{{ __('Login') }}</a>
+
+                            </li>
+                            <li class="text-uppercase">
+                                <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                        @endauth
+                    @endauth
             </ul>
         </nav>
     </div>

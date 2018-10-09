@@ -2,10 +2,10 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class Admin extends Authenticatable
 {
     use Notifiable;
 
@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email','type',
+        'name', 'email', 'password',
     ];
 
     /**
@@ -27,16 +27,5 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function post(){
-        return $this->hasMany('App\Post','id_p');
-    }
-
-    public function messages()
-    {
-        return $this->hasMany(Message::class);
-    }
-
-    public function conference(){
-        return $this->belongsTo('App\Conference','id_conf');
-    }
+    protected $table = "admins";
 }

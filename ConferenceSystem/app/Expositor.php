@@ -23,4 +23,8 @@ class Expositor extends Model
     protected $hidden = [
 
     ];
+
+    public function conference(){
+        return $this->belongsTo('App\Conference','id_conf');
+    }
 }

@@ -16,6 +16,7 @@ class CreateExpositorsTable extends Migration
         Schema::create('expositors', function (Blueprint $table) {
             $table->increments('id_exp');
             $table->string('name');
+            $table->string('email')->unique();
             $table->integer('age');
             $table->string('description');
             $table->string('address_exp');

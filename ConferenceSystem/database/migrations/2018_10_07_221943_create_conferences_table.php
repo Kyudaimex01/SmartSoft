@@ -14,8 +14,13 @@ class CreateConferencesTable extends Migration
     public function up()
     {
         Schema::create('conferences', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_conf');
+
             $table->timestamps();
+            $table->integer('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users');
+            $table->integer('id_ex')->unsigned();
+            $table->foreign('id_ex')->references('id_exp')->on('expositors');
         });
     }
 
